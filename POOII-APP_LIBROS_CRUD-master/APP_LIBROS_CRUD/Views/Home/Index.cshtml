@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row justify-content-center d-flex mb-5">
+    <div class="col-10">
+        <div class="alert alert-info" role="alert">
+            CRUD Libros
+        </div>
+        <button type="button" class="btn btn-outline-success btn-new-libro"><i class="bi bi-database-add"> Registrar Libro</i></button>
+        <table class="table table-striped" id="tablaLibros">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Libro</th>
+                    <th>Autor</th>
+                    <th>Nro. Páginas</th>
+                    <th>Editorial</th>
+                    <th colspan="2"></th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="modalDeleteLibro" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel2">¿Eliminar Libro?</h1>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="txtIDLibro"/>
+                <button class="btn btn-danger btn-eliminar-libro"><i class="bi bi-check"></i> Sí, eliminar.</button>
+                <button class="btn btn-info" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x"></i> No, cancelar.</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalLibro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar Libro</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label" for="txtTitulo">Título</label>
+                    <input type="text" class="form-control" id="txtTitulo" autocomplete="off"/>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="cboAutor">Autor</label>
+                    <select class="form-select" id="cboAutor">
+
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="txtNroPaginas">Páginas</label>
+                    <input type="number" class="form-control" id="txtNroPaginas"/>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="cboEditorial">Editorial</label>
+                    <select class="form-select" id="cboEditorial">
+
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-save-libro">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/crudLibros.js"></script>
+}

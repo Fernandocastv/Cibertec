@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\APP_LIBROS_CRUD.props" />
+</Project>
